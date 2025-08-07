@@ -32,3 +32,12 @@ def test_text_to_the_center(browser):
     text_align = elements_page.text_on_page_elements.get_css_value('text-align')
     print(f'Выравнивание текста: {text_align}')
     assert text_align == 'center', f"Текст не по центру! Выравнивание: {text_align}"
+
+
+def test_page_elements(browser):
+    elements_page = ElementsPage(browser)
+    elements_page.visit()
+
+    assert elements_page
+    assert elements_page.btn_sidebar_first.exist()
+    assert elements_page.btn_sidebar_first_textbox.exist()

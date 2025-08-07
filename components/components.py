@@ -32,3 +32,6 @@ class WebElement:
 
     def get_css_value(self, property_name):
         return self.find_element().value_of_css_property(property_name)
+
+    def visible(self):
+        return self.find_element().is_displayed()
