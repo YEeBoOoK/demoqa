@@ -85,3 +85,6 @@ class WebElement:
 
     def check_css(self, style, value=''):
         return self.find_element().value_of_css_property(style) == value
+
+    def is_enabled(self):
+        return self.find_element().is_enabled()
