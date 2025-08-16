@@ -1,11 +1,13 @@
 from selenium.webdriver.common.by import By
 import time
 import logging
+from components.components import WebElement
 
 class BasePage:
     def __init__(self, driver, base_url):
         self.driver = driver
         self.base_url = base_url
+        self.viewport = WebElement(driver, 'head > meta:nth-child(2)')
 
     def visit(self):
         return self.driver.get(self.base_url)
